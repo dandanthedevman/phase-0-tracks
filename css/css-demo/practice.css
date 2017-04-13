@@ -1,0 +1,29 @@
+#contact-info {
+
+  font-size: .8em;
+
+}
+
+.job {
+
+background-color: #e9e5dc;
+border:2px;
+border-radius: 10px;
+padding: 10px;
+width:100%;
+margin-bottom: 2px;
+
+}
+
+.list {
+	font-size: .8em;
+}
+
+#resume-title:hover {
+
+	color:blue;
+}
+
+ul li {
+	color:grey;
+}
