@@ -1,0 +1,93 @@
+# Elevator Algorithm 
+
+Deciding direction of travel 
+	- If proceeding to floor > current floor press up-button  
+	- other wise press down-button 
+
+Enter elevator 
+	- if elevator doors open move forward till inside elevator 
+	- Otherwise wait 
+
+Move to floor sector panel 
+    - When inside elevator turn 120 degrees around counter clockwise 
+    - move forward until in contact with floor selector panel 
+
+At floor sector panel 
+    - start at top left of list 
+    - If desired floor press button 
+    - otherwise if its not a floor button move to next button 
+    - otherwise if not desired floor move to next button 
+    - When correct floor button has been pick move backward and stop in middle of elevator
+    -turn 60 degrees counter clockwise 
+
+Exiting elevator 
+	- if door open proceed forward until elevator was been exited 
+	- Otherwise wait 
+
+
+
+
+
+# Making espresso 
+
+Clearing machine 
+	- Remove portafilter 
+		- if empty set aside 
+		- otherwise empty filter 
+
+	- press double shot button 
+	    - if still running wait 
+	    - otherwise move to next step 
+    
+Grind espresso 
+
+	- put the filter portion or the portafilter in grinder slot
+	
+	- press the grind button 
+		- if grinding stopped continue to next step 
+		- otherwise wait 
+	
+	- remove portafilter from grinder slot 
+	
+	
+
+Condense Espresso grounds 
+
+	- tap lightly bottom of portafilter to counter service 
+	    - if evenly condensed stop 
+	    - otherwise continue 
+
+	- take tamp and place on top of ground coffee 
+
+	- apply pressure to tamp to condense coffee 
+		- if optimum pressure has been achieved stop 
+		- other wise continue to apply pressure 
+    
+
+Brew espresso 
+
+    - put portafilter back into machine 
+
+    - take espresso cup and place the cup underneath the spout of the portafilter 
+    
+    - press double button 
+     	- if espresso still brewing wait
+     	- other wise remove espresso cup 
+
+
+Drink espresso 
+    - put cup to mouth and enjoy espresso 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
