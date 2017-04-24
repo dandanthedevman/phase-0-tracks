@@ -1,5 +1,14 @@
+def to_boolean (x)
+  if x == 'yes'
+     true
+  else 
+     false
+  end
+end
 
-
+def age(dob)
+   Time.now.year - dob 
+end
 
 puts "How many employees will you be processing"
 
@@ -11,77 +20,55 @@ begin
   puts "Enter Applicant"
 
   puts "What is your name?"
-    _name = gets.chomp
+     _name = gets.chomp
   
   puts "How old are you?"
-    age = gets.chomp.to_i 
+     age = gets.chomp.to_i 
   
   puts "What's your year of birth?"
-   def age(dob)
-   2016 - dob 
-   end
-  
-   dob = gets.chomp.to_i
-   dob = age(dob)
+     dob = gets.chomp.to_i
+     dob = age(dob)
   
   puts "Our company cafeteria serves garlic bread. Should we order some for you?"
-    def to_boolean (x)
-     if x == 'yes'
-     true
-     else false
-     end
-    end
-    garlic_bread = gets.chomp 
-      garlic_bread = to_boolean(garlic_bread)
+     garlic_bread = gets.chomp 
+     garlic_bread = to_boolean(garlic_bread)
   
   puts "Would you like to enroll in the company’s health insurance?"
-     def to_boolean (x)
-     if x == 'yes'
-     true
-     else false
-     end
-    end
-   health_insurance = gets.chomp
+     health_insurance = gets.chomp
      health_insurance = to_boolean(health_insurance)
  
   puts "Enter any allergy's, When finished type done"
-
-  until (allergy = gets.chomp) == "done" 
-        
-    if allergy == "sunshine"
-       allergy = "sunshine"
-       break 
-    end
-    
+  
+  allergy = gets.chomp
+  until (allergy) == "done" || allergy == "sunshine"
     puts "Enter any allergy's, When finished type done"  
+    allergy = gets.chomp
   end 
   
-  vamp_result = case  
+  case  
   
-  when _name == "Drake Cula" && _name == "Tu Fang"
-    "Definitely a vampire"
+    when ( _name == "Drake Cula" ) || ( _name == "Tu Fang") 
+      puts "Definitely a vampire"
+      
+    when (allergy == "sunshine") 
+      puts "Probably a vampire"
+    
+    when age == dob && (garlic_bread == true || health_insurance == true)
+      puts"Probably not a vampire."
+    
+    when age != dob && (garlic_bread == false || health_insurance == false) 
+      puts "Probably a vampire"
   
-  when (allergy == "sunshine") 
-    "Probably a vampire"
-  
-  when age == dob && (garlic_bread == true || health_insurance == true)
-    "Probably not a vampire."
-  
-  when age != dob && (garlic_bread == false || health_insurance == false) 
-    "Probably a vampire"
-
-  when age != dob && garlic_bread == false && health_insurance == false
-    "Almost certainly a vampire."
-  
-  else
-    "Results inconclusive"
-  
+    when age != dob && garlic_bread == false && health_insurance == false
+      puts "Almost certainly a vampire."
+    
+    else
+      puts "Results inconclusive"
+    
   end 
   
   x + 1 
   x+=1 
-  
-  p vamp_result
   
 end until x == employees
 
