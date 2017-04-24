@@ -1,12 +1,15 @@
 
 #define method: use the .next on the indext of each letter
 def encrypt(string)
-  if string[0] == "z"
-		string[0] = "a"
-		p string[0] + string[1].next + string[2].next
-	else	
-		p string[0].next + string[1].next + string[2].next
-	end
+index = 0
+  while index < string.length
+      if string[index] == "z"
+  		string[index] = "a"
+  	else
+    string[index] = string[index].next!
+  end
+  index += 1
+  end
 end
 
 #prints result of each letter using the above method (for Release 3)
