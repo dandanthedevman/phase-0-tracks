@@ -40,7 +40,7 @@ interior_design_application[:decor_theme] = gets.chomp
 puts "Do you like the color orange(yes/no)?"
 interior_design_application[:like_orange] = to_boolean(gets.chomp)
 
-puts "Here is your application"
+puts "Here is your interior design application"
 pp interior_design_application
 
 puts "Do you need to change any information? (yes/no)"
@@ -49,7 +49,7 @@ change_info = to_boolean(gets.chomp)
 
 if change_info == true # allows user to re input values 
 	puts "What field would you like to change? Choose from the following list : 
-	name, age, children, decor, orange, if list is right type exit"
+	name, age, children, decor, orange. If no change wanted type exit"
 	
 	field = gets.chomp
 	
@@ -76,10 +76,10 @@ if change_info == true # allows user to re input values
 		     interior_design_application[:like_orange] = to_boolean(gets.chomp)
 			
 	else
-		 puts "No change added"
+		 puts "No change detected"
 	end	
 end
 
-puts "Here is your application"
+puts "Here is your interior design application"
 
 pp interior_design_application
