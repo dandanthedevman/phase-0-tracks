@@ -2,7 +2,7 @@
 
 def hey
 	puts "Hey!"
-	yield(name1, name2)
+	yield("Dan", "Stan")
 end
 
 hey { |name1, name2| puts "yeah you guys #{name1} and #{name2}"}
@@ -15,70 +15,87 @@ skate_array = [ "bluetown", "welcome", "shred Shop", "spitfire"]
 snowboards_hash = { board: "public", boots: "32", bindings: "union" }
 
 #Print Array and hash 
-p skate_array.each
-p snowboards_hash.each 
+#p skate_array.each
+#p snowboards_hash.each 
 
 #Using .each 
+
 #Hash 
 snowboards_hash.each do |type_of_equipment, brand|
-	 puts "those are cool #{type_of_equipment}, 
-	 #{brand} makes some great stuff. "
+	puts "those are cool #{type_of_equipment}, 
+	#{brand} makes some great stuff. "
 end 
 #Array 
 skate_array.each do |board|
-     puts "that's a cool #{board}deck!"
+  puts "that's a cool #{board}deck!"
 end
 
 #Using .map and .map! 
 
-
-skate_array.map do |board| 
-	board.upcase
+#Normal map
+modified_skate = skate_array.map do |board| 
+  board.upcase
 end
 
 p skate_array 
 
+p modified_skate
+
+#Dangerous map
 skate_array.map! do |board|
-	 board.upcase
+	board.upcase
 end 
 
-
-
-
-#Uses .map to print a modified (uppercase) hash without permanent changes.
-bikes_hash.map do |type, bike|
-  p "I want a new #{type.upcase} bike. Maybe a #{bike.upcase}!"
-end
+p skate_array	
 
 #Release 2
-random_array = [1, 2, 3, 7, 8, 9]
-random_hash = { 1 => "one", 5 => "five", 6 => "six", 9 => "nine"}
+#1. Deletes any numbers that are less than 3.
+	#method .delete_if 
+array1 = [2, 4, 6, 9, 12, 23]
 
-#1 A method that iterates through the items, deleting any numbers that are less than 5.
-puts "delete if"
-p random_array.delete_if {|num| num < 5 }
-p random_hash.delete_if {|num| num < 5 }
+hash1 = { first: 1, second: 2, third: 3, fourth: 4}
 
-random_array = [1, 2, 3, 7, 8, 9]
-random_hash = { 1 => "one", 5 => "five", 6 => "six", 9 => "nine"}
+p array1.delete_if {|num| num < 3 }
 
-#2 A method that keeps any number less than five
-puts "keep if"
-p random_array.keep_if {|num| num < 5 }
-p random_hash.keep_if {|num| num < 5 }
+p hash1.delete_if {|number, digit| digit < 3 }
 
-random_array = [1, 2, 3, 7, 8, 9]
-random_hash = { 1 => "one", 5 => "five", 6 => "six", 9 => "nine"}
+#2 keeps any number less than five
+	#method .keep_if
 
-#3 A method that filter out even numbers
-puts "select if even"
-p random_array.select {|num| num.even? }
-p random_hash.select {|num| num.even? }
+array2 = [2, 4, 6, 9, 12, 23]
 
-random_array = [1, 2, 3, 7, 8, 9]
-random_hash = { 1 => "one", 5 => "five", 6 => "six", 9 => "nine"}
+hash2 = { first: 1, second: 2, third: 3, eighth: 8}
+
+p array2.keep_if {|num| num < 5 }
+
+p hash2.keep_if {|number, digit| digit < 5 }
+
+#3 filter out even numbers
+	#method .select 
+
+array3 = [2, 4, 6, 9, 12, 23]
+
+hash3 = { first: 1, second: 2, third: 3, eighth: 8}
+
+p array3.select {|digit| digit.even? }
+
+p hash3.select {|number, digit| digit.even? }
+
 
 #4 A method that will remove items from a data structure until the condition in the block evaluates to false:
-puts "select if even (with bash)"
-p random_array.select! {|num| num.even? }
-p random_hash.select! {|num| num.even? }
+	#method .take_while 
+
+array4 = [2, 4, 6, 9, 12, 23]
+
+hash4 = { first: 1, second: 2, third: 3, eighth: 8}
+
+p array4.take_while {|digit| digit <= 9}
+
+p hash4.take_while {|number, digit| digit <=3}
+
+
+
+
+
+
+
