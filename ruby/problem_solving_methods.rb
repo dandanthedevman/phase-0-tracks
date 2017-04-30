@@ -1,4 +1,4 @@
-# release 0
+# Release 0
 
 #array_1 = [32, 46, 21, 12, 5, 7]
 
@@ -15,7 +15,7 @@ def search_array(array, interger)
 end
 
 
-# release 1
+# Release 1
 
 def fib(index)
   output = [0, 1]
@@ -29,7 +29,7 @@ def fib(index)
   output
 end
 
-# release 2
+# Release 2
 
 
 # Take a set of numbers
