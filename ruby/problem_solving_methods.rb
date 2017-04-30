@@ -31,22 +31,23 @@ end
 
 # Release 2
 
+# Bubble sort 
 
-# Take a set of numbers
+	# Take an array
 
-# 1. Find the number in first position (A) and the number in the second position (B) of that set
+	# 1. Find the number in first position (A) and the number in the second position (B) of that set
 
-# 2. Check to see if number in first position (A) is greater than the number in the second position (B)
+	# 2. Check to see if number in first position (A) is greater than the number in the second position (B)
 
-# 3. If the first number in the first position is greater than the number in the second position, switch the position of the two numbers so that the order is now B, A
+	# 3. If the first number in the first position is greater than the number in the second position, switch the position of the two numbers so that the order is now B, A
 
-# 4. If A is not greater than B, put A is a new set of numbers, 
+	# 4. If A is not greater than B, put A is a new set of numbers, 
 
-# 5. move on to evaluate the number in the second (B) and third position (C)
+	# 5. Move on to evaluate the number in the second (B) and third position (C)
 
-# 6. Continue through the entire set of numbers
+	# 6. Continue through the entire array 
 
-# Keep going through steps 1-6 until no more number positions change.
+	# 7. Keep going through steps 1-6 until no more number positions change.
 
 def bubble_sort(array)
 
