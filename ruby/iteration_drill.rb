@@ -1,25 +1,63 @@
 # Array Drills
 
-zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
-                              "shotgun", "compass", "CB radio", "batteries"]
+zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars", "shotgun", "compass", "CB radio", "batteries"]
 
 # 1. Iterate through the zombie_apocalypse_supplies array,
 # printing each item in the array separated by an asterisk
 # ----
-p zombie_apocalypse_supplies.each do {|supply| puts supply[index] puts * } end 
+zombie_apocalypse_supplies.join(" * ") do |supply|
+	p supply 
+end 
 # 2. In order to keep yourself organized, sort your zombie_apocalypse_supplies
 # in alphabetical order. Do not use any special built-in methods.
 # ----
+
+
+supply = zombie_apocalypse_supplies
+
+supply.each_index do |first|
+  supply.each_index do |second|
+    if supply[first] < supply[second]
+      supply[first], supply[second] = supply[second], supply[first]
+    end
+  end
+end
+
+zombie_apocalypse_supplies = supply
+
+p zombie_apocalypse_supplies
 
 # 3. Create a method to see if a particular item (string) is in the
 # zombie_apocalypse_supplies. Do not use any special built-in methods.
 # For instance: are boots in your list of supplies?
 # ----
 
+def find_shotgun(array)
+	index = 0 
+	shotgun = "shotgun"
+	while index < array.length
+	  if array[index] == shotgun
+			puts "Found a shotgun!"
+    end
+  index+=1
+  end
+end
+
+find_shotgun(zombie_apocalypse_supplies)
+
+
 # 4. You can't carry too many things, you've only got room in your pack for 5.
 # Remove items in your zombie_apocalypse_supplies in any way you'd like,
 # leaving only 5. Do not use any special built-in methods.
 # ----
+
+def bare_minimum(array) 
+	loop do 
+		array[0].delete 
+	  break if array.length <= 5
+  end 
+end
+p bare_minimum(zombie_apocalypse_supplies)
 
 # 5. You found another survivor! This means you can combine your supplies.
 # Create a new combined supplies list out of your zombie_apocalypse_supplies
