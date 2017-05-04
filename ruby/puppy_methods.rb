@@ -1,9 +1,9 @@
 class Puppy
 
-def intialize 
-	puts "initializing new puppy instance"
- 
-end
+	def initialize 
+		puts "initializing new puppy instance" 
+	end
+
   def fetch(toy)
     puts "I brought back the #{toy}!"
     toy
@@ -31,15 +31,50 @@ end
   	end 
   end
 
-  end
-puppy = Puppy.new
+end
 
-puppy.fetch("bone")
+class	Interviewer 
 
-puppy.speak(4)
+	def initialize
+	end 
 
-p puppy.roll_over
+	def ask_name(a_name)
+		interviewer_name = a_name 
+		puts "Your interviewer name is #{interviewer_name}"
+	end 
 
-p puppy.dog_years(6)
+	def gets_tape_recorder
+		p "ready to record"
+	end
 
-puppy.personal_space(2)
+end
+
+interviewers = []
+
+counter = 0
+
+while counter <= 50
+	interviewer = Interviewer.new 
+	counter += 1
+	interviewers << interviewer
+end
+
+
+interviewers.each do |x|
+	puts "whats your name"
+	x.ask_name(gets.chomp)
+	x.gets_tape_recorder
+end
+
+p interviewers 
+# #puppy = Puppy.new
+
+# #puppy.fetch("bone")
+
+# #puppy.speak(4)
+
+# #p puppy.roll_over
+
+# p puppy.dog_years(6)
+
+# puppy.personal_space(2)
