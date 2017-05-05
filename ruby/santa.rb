@@ -1,4 +1,8 @@
 class	Santa 
+  
+  attr_reader :ethnicity
+
+  attr_accessor :gender, :age 
 
   def initialize(gender,ethnicity,hat_style)
    	puts "initializing Santa instance"
@@ -23,45 +27,32 @@ class	Santa
   end 
   
   def get_mad_at(reindeer_name) 
-  	@reindeer_ranking[-1] << @reindeer_ranking.index(reindeer_name)
-  end
-  
-  def reindeer_ranking
-  	@reindeer_ranking
-  end
-  
-  def ethnicity
-  	@ethnicity
-  end
-  
-  def age
-  	@age
+  	@reindeer_ranking.delete_if {|name| name == reindeer_name}
+    @reindeer_ranking.push(reindeer_name)
   end
 
 end 
 
-# santa.speak
+# DRIVER  CODE ------------------------------------------------------------------------------
 
-# santa.eat_milk_and_cookies("chocolate chip")
+santas = []
 
-# santa = Santa.new 
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 
-santas = Santa.new("n/a", "purple", "fluffy")
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
-# example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
-
-# example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-
-# hat_style = ["fluff ball", "normal hat","fluff ball", "normal hat","fluff ball", "normal hat","fluff ball"]
+hat_style = ["fluff ball", "normal hat","fluff ball", "normal hat","fluff ball", "normal hat","fluff ball"]
 
 
-# example_genders.length.times do |i|
-#   santas << Santa.new(example_genders[i], example_ethnicities[i], hat_style[i])
-# end
+50.times do 
+  santas << Santa.new(example_genders.sample, example_ethnicities.sample, hat_style.sample)
+end
 
-santas.get_mad_at("Rudolph")
+# puts " #{santas.age} + #{santas.ethnicity}"
 
+# santas.get_mad_at("Rudolph")
 
+# santas.gender = "grey"
 
 p santas
 
