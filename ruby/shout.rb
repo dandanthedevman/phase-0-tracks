@@ -46,6 +46,8 @@ include Shout
 
 end 
 
+# DRIVER CODE ---------------------
+
 protester = Protester.new
 protester.yell_angerily("Resist")
 protester.yell_happily("Peace and love")
